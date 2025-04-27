@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    @apply bg-navy-950 text-gray-100;
+  }
+
+  html.light {
+    @apply bg-white text-gray-900;
+    color-scheme: light;
+  }
+
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  .animate-gradientFlow {
+    background-size: 200% 200%;
+    animation: gradientFlow 6s ease infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSoft 2s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
